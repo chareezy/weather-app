@@ -1,0 +1,71 @@
+body {
+  display: block;
+  margin-top: 5px;
+  font-family: "Lato", sans-serif;
+}
+h1 {
+  text-align: center;
+  font-weight: 700;
+  padding: 40px;
+}
+.box {
+  border: 4px double #000;
+  max-width: 650px;
+  margin: 100px auto;
+  padding: 10 50 20;
+  height: 850px;
+  width: 800px;
+  border-radius: 10%;
+}
+.overcast-clouds {
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  padding: 10px;
+}
+.today-degree {
+  display: block;
+  text-align: center;
+  position: relative;
+  font-size: 60px;
+  font-weight: 700;
+}
+.temp-units {
+  display: block;
+  text-align: center;
+  position: relative;
+  bottom: 70px;
+  left: 50px;
+  font-size: 15px;
+}
+.search {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+.search-input {
+  border: 1px solid black;
+  height: 35px;
+  background: #fff;
+}
+.search-icon {
+  background: transparent;
+}
+.temp-description,
+.currentDate {
+  text-align: center;
+  font-weight: 300;
+}
+.row {
+  text-align: center;
+}
+.forecast {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+.name {
+  text-align: center;
+  font-weight: 300;
+}

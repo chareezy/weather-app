@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+		crossorigin="anonymous"
+	/><script src="https://kit.fontawesome.com/0ee8a9aeab.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+		rel="stylesheet"
+	/>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</script>
+	<link rel="stylesheet" href="src/styles.css" />
+	<title>Weather App</title>
+</head>
+<body>
+	<div class="container">
+		<div class="box">
+			<form class="searchCity" id="search-city">
+				<div class="search">
+					<input
+						class="search-input"
+						placeholder="SEARCH CITY..."
+						id="search-text"
+						type="text"
+						size="30"
+						width="20"
+						height="20"
+					/>
+					<button type="button" class="btn btn-light" id = "click-button">
+						<img
+							class="search-icon"
+							img
+							src="images/search.png"
+							width="20"
+							height="20"
+						/>
+					</button>
+					<button type="button" class="btn btn-light" id = "location-button">
+						 <i class="fas fa-map-marker-alt" width="20" height="20"></i></button>
+				</div>
+			</form>
+			<br />
+			<h1>SAN FRANCISCO, CA</h1>
+			<img class="overcast-clouds" src="images/suncloud.png" />
+			<span class="today-degree">58</span>
+			<span class="temp-units">°C</span> 
+			<div class="temp-description">
+				OVERCAST CLOUDS
+			</div>
+				<div class="currentDate" id="current-date"> MONDAY AUGUST 16 8:00PM
+				</div>
+			<div class="row">
+				<div class="col-2">TUE</div>
+				<div class="col-2">WED</div>
+				<div class="col-2">THU</div>
+				<div class="col-2">FRI</div>
+				<div class="col-2">SAT</div>
+				<div class="col-2">SUN</div>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col">
+					<img
+						class="sunny-clouds"
+						src="images/suncloud.png"
+						style="width: 60px"
+					/>
+				</div>
+				<div class="col">
+					<img
+						class="sunny-clouds"
+						src="images/suncloud.png"
+						style="width: 60px"
+					/>
+				</div>
+				<div class="col">
+					<img
+						class="sunny-clouds"
+						src="images/sun.png"
+						style="width: 60px"
+					/>
+				</div>
+				<div class="col">
+					<img
+						class="sunny-clouds"
+						src="images/suncloud.png"
+						style="width: 60px"
+					/>
+				</div>
+				<div class="col">
+					<img
+						class="sunny-clouds"
+						src="images/suncloud.png"
+						style="width: 60px"
+					/>
+				</div>
+				<div class="col">
+					<img
+						class="sunny-clouds"
+						src="images/suncloud.png"
+						style="width: 60px"
+					/>
+				</div>
+				<br />
+				<br />
+				<div class="row">
+					<div class="col-2">65°F/18°C</div>
+					<div class="col-2">68°F/20°C</div>
+					<div class="col-2">71°F/21°C</div>
+					<div class="col-2">68°F/20°C</div>
+					<div class="col-2">67°F/19°C</div>
+					<div class="col-2">67°F/19°C</div>
+				</div>
+				<br />
+				<br />
+				<div class="row">
+					<div class="col">WIND SPEED</div>
+					<div class="col">HUMIDITY</div>
+					<div class="col">PERCIPITATION</div>
+					<br />
+					<br />
+					<div class="row">
+						<div class="col ml-2" id="wind">16 MPH</div>
+						<div class="col" id ="humidity">74%</div>
+						<div class="col ml-7">2%</div>
+					</div>
+					<br />
+					<br />
+					<div class="name">
+						<a href="https://github.com/chareezy/weather-app" target="blank"
+							>OPEN-SOURCED CODE</a
+						>
+						BY CHARISSE LAM
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="src/index.js"></script>
+	</body>
+		</html>
