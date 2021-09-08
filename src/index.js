@@ -89,7 +89,7 @@ function showPosition(position) {
 }
 
 function getLocation(event) {
-  event.preventDeafult();
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
