@@ -88,9 +88,10 @@ function showPosition(position) {
   axios.get(apiUrl).then(showCity);
 }
 
-function getLocation() {
+function getLocation(event) {
+  event.preventDeafult();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-let location = document.querySelector("#location-button");
-location.addEventListener("click", getLocation);
+let currentLocation = document.querySelector("#location-button");
+currentLocation.addEventListener("click", getLocation);
