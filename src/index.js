@@ -52,6 +52,7 @@ function search(event) {
   axios.get(apiUrl).then(showTemperature);
 }
 function showTemperature(response) {
+  celsiusTemperature = response.data.main.temp;
   let temperature = Math.round(response.data.main.temp);
   let degree = document.querySelector(".today-degree");
   degree.innerHTML = `${temperature}`;
@@ -71,7 +72,6 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  celsiusTemperature = response.data.main.temp;
 }
 
 let form = document.querySelector("#search-city");
@@ -107,18 +107,18 @@ function getLocation(event) {
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp-units");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
 }
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temp-units");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temp-units");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
