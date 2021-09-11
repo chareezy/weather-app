@@ -58,10 +58,12 @@ function showTemperature(response) {
   degree.innerHTML = `${temperature}`;
   let description = document.querySelector(".temp-description");
   description.innerHTML = response.data.weather[0].main.trim().toUpperCase();
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
+  let humid = response.data.main.humidity;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `${humid}%`;
+  let windSpeed = Math.round(response.data.wind.speed);
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `${windSpeed} MPH`;
 }
 
 let form = document.querySelector("#search-city");
