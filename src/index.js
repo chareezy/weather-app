@@ -52,7 +52,7 @@ function search(event) {
   axios.get(apiUrl).then(showTemperature);
 }
 function showTemperature(response) {
-  let temperatureElement = document.querySelector(".today-degree");
+  let temperatureElement = document.querySelector("#today-degree");
   let description = document.querySelector(".temp-description");
   let iconElement = document.querySelector("#icon");
   let humidity = document.querySelector("#humidity");
