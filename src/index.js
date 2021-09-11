@@ -52,7 +52,6 @@ function search(event) {
   axios.get(apiUrl).then(showTemperature);
 }
 function showTemperature(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let degree = document.querySelector(".today-degree");
   degree.innerHTML = `${temperature}`;
