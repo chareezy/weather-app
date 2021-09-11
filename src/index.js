@@ -52,22 +52,23 @@ function search(event) {
   axios.get(apiUrl).then(showTemperature);
 }
 function showTemperature(response) {
-  let temperatureElement = Math.round(response.data.main.temp);
-  let degree = document.querySelector(".today-degree");
-  degree.innerHTML = `${temperatureElement}`;
+  let temperatureElement = document.querySelector(".today-degree");
   let description = document.querySelector(".temp-description");
+  let iconElement = document.querySelector("#icon");
+  let humidity = document.querySelector("#humidity");
+  let humid = response.data.main.humidity;
+  let wind = document.querySelector("#wind");
+
+  celsiusTemperature = response.data.main.temp;
+
+  temperatureElement = Math.round(response.data.main.temp);
   description.innerHTML = response.data.weather[0].description
     .trim()
     .toUpperCase();
-  let humid = response.data.main.humidity;
-  let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `${humid}%`;
-  let windSpeed = Math.round(response.data.wind.speed);
-  let wind = document.querySelector("#wind");
-
+  wind = Math.round(response.data.wind.speed);
   wind.innerHTML = `${windSpeed} MPH`;
 
-  let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
