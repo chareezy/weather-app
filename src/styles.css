@@ -38,6 +38,13 @@ h1 {
   left: 60px;
   font-size: 15px;
 }
+.temp-units .active {
+  color: #000;
+  cursor: default;
+}
+.temp-units .active:hover {
+  text-decoration: none;
+}
 .search {
   display: inline-block;
   margin: 0 auto;
