@@ -56,7 +56,9 @@ function showTemperature(response) {
   let degree = document.querySelector(".today-degree");
   degree.innerHTML = `${temperature}`;
   let description = document.querySelector(".temp-description");
-  description.innerHTML = response.data.weather[0].main.trim().toUpperCase();
+  description.innerHTML = response.data.weather[0].description
+    .trim()
+    .toUpperCase();
   let humid = response.data.main.humidity;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `${humid}%`;
@@ -68,7 +70,7 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${reseponse.data.weather[0].icon}@2x.png`
   );
-  iconElement.setAttribute("alt", response.data.weather[0].main);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let form = document.querySelector("#search-city");
