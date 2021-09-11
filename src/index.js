@@ -52,10 +52,9 @@ function search(event) {
   axios.get(apiUrl).then(showTemperature);
 }
 function showTemperature(response) {
-  celsiusTemperature = response.data.main.temp;
-  let temperature = Math.round(response.data.main.temp);
+  let temperatureElement = Math.round(response.data.main.temp);
   let degree = document.querySelector(".today-degree");
-  degree.innerHTML = `${temperature}`;
+  degree.innerHTML = `${temperatureElement}`;
   let description = document.querySelector(".temp-description");
   description.innerHTML = response.data.weather[0].description
     .trim()
@@ -65,7 +64,9 @@ function showTemperature(response) {
   humidity.innerHTML = `${humid}%`;
   let windSpeed = Math.round(response.data.wind.speed);
   let wind = document.querySelector("#wind");
+
   wind.innerHTML = `${windSpeed} MPH`;
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -104,6 +105,9 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+let currentLocation = document.querySelector("#location-button");
+currentLocation.addEventListener("click", getLocation);
+
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp-units");
@@ -121,13 +125,10 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-let celsiusTemperature = null;
-
-let currentLocation = document.querySelector("#location-button");
-currentLocation.addEventListener("click", getLocation);
-
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let celsiusTemperature = null;
