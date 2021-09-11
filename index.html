@@ -1,152 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link
-		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-		rel="stylesheet"
-		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-		crossorigin="anonymous"
-	/><script src="https://kit.fontawesome.com/0ee8a9aeab.js" crossorigin="anonymous"></script>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
-		rel="stylesheet"
-	/>
-</script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-	<title>Weather App</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/0ee8a9aeab.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
     <link rel="stylesheet" href="src/styles.css" />
-</head>
-<body>
-	<div class="container">
-		<div class="box">
-			<form class="searchCity" id="search-city">
-				<div class="search">
-					<input
-						class="search-input"
-						placeholder="SEARCH CITY..."
-						id="search-text"
-						type="text"
-						size="30"
-						width="20"
-						height="20"
-					/>
-					<button type="button" class="btn btn-light" id = "click-button">
-						<img
-							class="search-icon"
-							img
-							src="images/search.png"
-							width="20"
-							height="20"
-						/>
-					</button>
-					<button type="button" class="btn btn-light" id = "location-button">
-						 <i class="fas fa-map-marker-alt" width="20" height="20"></i></button>
-				</div>
-			</form>
-			<br />
-			<h1>SAN FRANCISCO, CA</h1>
-			<img class="weather-icon" src ="http://openweathermap.org/img/wn/01d@2x.png" alt="" id="icon" />
-			<span class="today-degree">58</span>
-				<span class="temp-units">
-					<a href="#" id="celsius">°C</a> |
-				<a href="#" id="fahrenheit">°F</a> 
-				
-			</span>
-			<div class="temp-description">
-				OVERCAST CLOUDS
-			</div>
-				<div class="currentDate" id="current-date"> MONDAY AUGUST 16 8:00PM
-				</div>
-			<div class="row">
-				<div class="col-2">TUE</div>
-				<div class="col-2">WED</div>
-				<div class="col-2">THU</div>
-				<div class="col-2">FRI</div>
-				<div class="col-2">SAT</div>
-				<div class="col-2">SUN</div>
-			</div>
-			<br />
-			<div class="row">
-				<div class="col">
-					<img
-						class="sunny-clouds"
-						src="http://openweathermap.org/img/wn/02d@2x.png"
-						style="width: 60px"
-					/>
-				</div>
-				<div class="col">
-					<img
-						class="sunny-clouds"
-						src="http://openweathermap.org/img/wn/01d@2x.png"
-						style="width: 60px"
-					/>
-				</div>
-				<div class="col">
-					<img
-						class="sunny-clouds"
-						src="http://openweathermap.org/img/wn/01d@2x.png"
-						style="width: 60px"
-					/>
-				</div>
-				<div class="col">
-					<img
-						class="sunny-clouds"
-						src="http://openweathermap.org/img/wn/01d@2x.png"
-						style="width: 60px"
-					/>
-				</div>
-				<div class="col">
-					<img
-						class="sunny-clouds"
-						src="http://openweathermap.org/img/wn/02d@2x.png"
-						style="width: 60px"
-					/>
-				</div>
-				<div class="col">
-					<img
-						class="sunny-clouds"
-						src="http://openweathermap.org/img/wn/02d@2x.png"
-						style="width: 60px"
-					/>
-				</div>
-				<br />
-				<br />
-				<div class="row">
-					<div class="col-2">18°C/65°F</div>
-					<div class="col-2">20°C/68°F</div>
-					<div class="col-2">21°C/71°F</div>
-					<div class="col-2">20°C/68°F</div>
-					<div class="col-2">19°C/67°F</div>
-					<div class="col-2">19°C/67°F</div>
-				</div>
-				<br />
-				<br />
-				<div class="row justify-content-evenly">
-					<div class="col-6">WIND SPEED</div>
-					<div class="col-6">HUMIDITY</div>
-					<br />
-					<br />
-					<div class="row justify-content-lg-evenly">
-						<div class="col-6" id="wind">2 MPH</div>
-						<div class="col-6" id ="humidity">46%</div>
-					</div>
-					<br />
-					<br />
-					<div class="name">
-						<a href="https://github.com/chareezy/weather-app" target="blank"
-							>OPEN-SOURCE CODE</a
-						>
-						BY CHARISSE LAM
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="src/index.js"></script>
-	</body>
-		</html>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <form class="searchCity" id="search-city">
+          <div class="search">
+            <input
+              class="search-input"
+              placeholder="SEARCH CITY..."
+              id="search-text"
+              type="text"
+              size="30"
+              width="20"
+              height="20"
+            />
+            <button type="button" class="btn btn-light" id="click-button">
+              <img
+                class="search-icon"
+                img
+                src="images/search.png"
+                width="20"
+                height="20"
+              />
+            </button>
+            <button type="button" class="btn btn-light" id="location-button">
+              <i class="fas fa-map-marker-alt" width="20" height="20"></i>
+            </button>
+          </div>
+        </form>
+        <br />
+        <h1>SAN FRANCISCO, CA</h1>
+        <img
+          class="weather-icon"
+          src="http://openweathermap.org/img/wn/01d@2x.png"
+          alt=""
+          id="icon"
+        />
+        <span class="today-degree">58</span>
+        <span class="temp-units">
+          <a href="#" id="celsius">°C</a> |
+          <a href="#" id="fahrenheit">°F</a>
+        </span>
+        <div class="temp-description">OVERCAST CLOUDS</div>
+        <div class="currentDate" id="current-date">MONDAY AUGUST 16 8:00PM</div>
+        <div class="row">
+          <div class="col-2">TUE</div>
+          <div class="col-2">WED</div>
+          <div class="col-2">THU</div>
+          <div class="col-2">FRI</div>
+          <div class="col-2">SAT</div>
+          <div class="col-2">SUN</div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col">
+            <img
+              class="sunny-clouds"
+              src="http://openweathermap.org/img/wn/02d@2x.png"
+              style="width: 60px"
+            />
+          </div>
+          <div class="col">
+            <img
+              class="sunny-clouds"
+              src="http://openweathermap.org/img/wn/01d@2x.png"
+              style="width: 60px"
+            />
+          </div>
+          <div class="col">
+            <img
+              class="sunny-clouds"
+              src="http://openweathermap.org/img/wn/01d@2x.png"
+              style="width: 60px"
+            />
+          </div>
+          <div class="col">
+            <img
+              class="sunny-clouds"
+              src="http://openweathermap.org/img/wn/01d@2x.png"
+              style="width: 60px"
+            />
+          </div>
+          <div class="col">
+            <img
+              class="sunny-clouds"
+              src="http://openweathermap.org/img/wn/02d@2x.png"
+              style="width: 60px"
+            />
+          </div>
+          <div class="col">
+            <img
+              class="sunny-clouds"
+              src="http://openweathermap.org/img/wn/02d@2x.png"
+              style="width: 60px"
+            />
+          </div>
+          <br />
+          <br />
+          <div class="row">
+            <div class="col-2">18°C/65°F</div>
+            <div class="col-2">20°C/68°F</div>
+            <div class="col-2">21°C/71°F</div>
+            <div class="col-2">20°C/68°F</div>
+            <div class="col-2">19°C/67°F</div>
+            <div class="col-2">19°C/67°F</div>
+          </div>
+          <br />
+          <br />
+          <div class="row justify-content-evenly">
+            <div class="col-6">WIND SPEED</div>
+            <div class="col-6">HUMIDITY</div>
+            <br />
+            <br />
+            <div class="row justify-content-lg-evenly">
+              <div class="col-6" id="wind">2 MPH</div>
+              <div class="col-6" id="humidity">46%</div>
+            </div>
+            <br />
+            <br />
+            <div class="name">
+              <a href="https://github.com/chareezy/weather-app" target="blank"
+                >OPEN-SOURCE CODE</a
+              >
+              BY CHARISSE LAM
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
