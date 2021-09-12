@@ -40,6 +40,7 @@ h1 {
   left: 60px;
   font-size: 15px;
 }
+
 .temp-units .active {
   color: #000;
   cursor: default;
