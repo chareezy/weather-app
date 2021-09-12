@@ -52,6 +52,7 @@ function search(event) {
   axios.get(apiUrl).then(showTemperature);
 }
 function showTemperature(response) {
+  celsiusTemperature = response.data.main.temp;
   let temperatureElement = document.querySelector(".today-degree");
   let description = document.querySelector(".temp-description");
   let iconElement = document.querySelector("#icon");
@@ -59,10 +60,7 @@ function showTemperature(response) {
   let humid = response.data.main.humidity;
   let wind = document.querySelector("#wind");
 
-  celsiusTemperature = response.data.main.temp;
-
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
-
   description.innerHTML = response.data.weather[0].description
     .trim()
     .toUpperCase();
