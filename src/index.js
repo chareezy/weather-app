@@ -68,7 +68,7 @@ function showTemperature(response) {
     .toUpperCase();
   humidity.innerHTML = `${humid}%`;
   wind = Math.round(response.data.wind.speed);
-  wind.innerHTML = `${windSpeed} MPH`;
+  wind.innerHTML = `${wind} MPH`;
 
   iconElement.setAttribute(
     "src",
