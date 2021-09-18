@@ -39,6 +39,32 @@ let now = new Date();
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = formatDate(now);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["SAT", "SUN", "MON", "TUES"];
+  let forecastHTML = `<div class"row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col">
+              <div class="forecast-date">${day}</div>
+              <img
+                class="sunny-clouds"
+                src="https://openweathermap.org/img/wn/02d@2x.png"
+                style="width: 60px"
+              />
+                              <span class="weather-forecast-temp-max">18°</span>
+                <span class="weather-forecast-temp-min">12°</span>
+            </div>
+   `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-text");
