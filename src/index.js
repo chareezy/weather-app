@@ -39,15 +39,15 @@ let now = new Date();
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = formatDate(now);
 
-function formatDay(date) {
+function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["SUN", "MON", "TUES", "WED", "THU", "FRI,", "SAT"];
 
-  return [day];
+  return days[day];
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecast = respnse.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
