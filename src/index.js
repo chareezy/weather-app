@@ -43,7 +43,7 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["SAT", "SUN", "MON", "TUES"];
-  let forecastHTML = `<div class"row">`;
+  let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
@@ -157,3 +157,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+displayForecast();
