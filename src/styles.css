@@ -11,9 +11,9 @@ h1 {
 .box {
   border: 4px double #000;
   max-width: 650px;
-  margin: 100px auto;
+  margin: 50px auto;
   padding: 10 50 20;
-  height: 850px;
+  height: 870px;
   width: 800px;
   border-radius: 10%;
 }
