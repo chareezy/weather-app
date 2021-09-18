@@ -68,32 +68,93 @@
         </span>
         <div class="temp-description">OVERCAST CLOUDS</div>
         <div class="currentDate" id="current-date">MONDAY AUGUST 16 8:00PM</div>
-        <div class="weather-forecast">
+       <div class="forecast-date">
+         <div class="row">
+<div class="col-2">TUE</div>
+<div class="col-2">WED</div>
+<div class="col-2">THU</div>
+<div class="col-2">FRI</div>
+<div class="col-2">SAT</div>
+<div class="col-2">SUN</div>
+         </div>
+       </div>
+       <br/>
+<div class="weather-forecast">
           <div class="row">
-            <div class="col-2">
-              <div class="weather-forecast-date">TUE</div>
+            <div class="col">
               <img
+                class="sunny-clouds"
                 src="https://openweathermap.org/img/wn/02d@2x.png"
                 style="width: 60px"
               />
-              <div class="weather-forecast-temperature">
-                <span class="weather-forcast-temp-max">18°</span>
+            </div>
+            <div class="col">
+              <img
+                class="sunny-clouds"
+                src="https://openweathermap.org/img/wn/01d@2x.png"
+                style="width: 60px"
+              />
+            </div>
+            <div class="col">
+              <img
+                class="sunny-clouds"
+                src="https://openweathermap.org/img/wn/01d@2x.png"
+                style="width: 60px"
+              />
+            </div>
+            <div class="col">
+              <img
+                class="sunny-clouds"
+                src="https://openweathermap.org/img/wn/01d@2x.png"
+                style="width: 60px"
+              />
+            </div>
+            <div class="col">
+              <img
+                class="sunny-clouds"
+                src="https://openweathermap.org/img/wn/02d@2x.png"
+                style="width: 60px"
+              />
+            </div>
+            <div class="col">
+              <img
+                class="sunny-clouds"
+                src="https://openweathermap.org/img/wn/02d@2x.png"
+                style="width: 60px"
+              />
+            </div>
+          </div>
+          <br />
+          <br />
+          <div class="weather-forecast-temp">
+            <div class="row">
+              <div class="col">
+                <span class="weather-forecast-temp-max">18°</span>
                 <span class="weather-forcast-temp-min">12°</span>
-           <div class="row justify-content-evenly">
-          <div class="col-6">WIND SPEED</div>
-          <div class="col-6">HUMIDITY</div>
-          <br />
-          <div class="row justify-content-evenly">
-            <div class="col-6" id="wind">16 MPH</div>
-            <div class="col-6" id ="humidity">74%</div>
-                </div>
+                <span class="weather-forecast-temp-max">18°</span>
+                <span class="weather-forcast-temp-min">12°</span>
+                <span class="weather-forecast-temp-max">18°</span>
+                <span class="weather-forcast-temp-min">12°</span>
+                <span class="weather-forecast-temp-max">18°</span>
+                <span class="weather-forcast-temp-min">12°</span>
+                <span class="weather-forecast-temp-max">18°</span>
+                <span class="weather-forcast-temp-min">12°</span>
+                <span class="weather-forecast-temp-max">18°</span>
+                <span class="weather-forcast-temp-min">12°</span>
               </div>
             </div>
           </div>
-        </div>
-        <br />
-        <br />
-        <br />
+<br />
+<div class="row justify-content-evenly">
+  <div class="col-6">WIND SPEED</div>
+  <div class="col-6">HUMIDITY</div>
+  <br/>
+  <br/>
+  <div class="row justify-contetn-lg-eveny">
+    <div class="col-6" id="wind">2 MPH</div>
+    <div class="col-6" id="humidity">46%</div>
+<br />
+<br />
         <div class="name">
           <a href="https://github.com/chareezy/weather-app" target="blank"
             >OPEN-SOURCE CODE</a
@@ -101,6 +162,8 @@
           BY CHARISSE LAM
         </div>
       </div>
+    </div>
+    </div>
     </div>
     <script src="src/index.js"></script>
   </body>
