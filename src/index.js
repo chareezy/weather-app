@@ -79,6 +79,13 @@ function search(event) {
 
   axios.get(apiUrl).then(showTemperature);
 }
+
+function getForecast(coordiantes) {
+  let apiKey = "eb9800f95ce9aba6c28ebe6edbd56a9d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
 function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   let temperatureElement = document.querySelector(".today-degree");
@@ -101,6 +108,8 @@ function showTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 let form = document.querySelector("#search-city");
