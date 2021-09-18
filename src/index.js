@@ -63,7 +63,7 @@ function displayForecast(response) {
               <img
                 class="sunny-clouds"
                 src="https://openweathermap.org/img/wn/${
-                  forecast.weather[0].icon
+                  forecastDay.weather[0].icon
                 }@2x.png"
                 style="width: 60px"
               />
