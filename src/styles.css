@@ -79,6 +79,10 @@ h1 {
 .weather-forecast-temp-min {
   opacity: 0.5;
 }
+.forecast-description {
+  text-align: center;
+  margin: 0 auto;
+}
 .name {
   text-align: center;
   font-weight: 300;
