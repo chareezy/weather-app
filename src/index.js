@@ -55,8 +55,10 @@ function displayForecast() {
                 src="https://openweathermap.org/img/wn/02d@2x.png"
                 style="width: 60px"
               />
+              <div class="weather-forecast-temp">
                               <span class="weather-forecast-temp-max">18°</span>
                 <span class="weather-forecast-temp-min">12°</span>
+            </div>
             </div>
    `;
   });
