@@ -76,6 +76,9 @@ h1 {
   margin: 0 auto;
   display: block;
 }
+.weather-forecast-temp {
+  margin: 10px;
+}
 .weather-forecast-temp-min {
   opacity: 0.5;
 }
