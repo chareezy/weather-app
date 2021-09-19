@@ -132,8 +132,6 @@ function showTemperature(response) {
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", search);
 
-search("San Francisco");
-
 let button = document.querySelector("#click-button");
 button.addEventListener("click", search);
 
