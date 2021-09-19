@@ -139,6 +139,13 @@ button.addEventListener("click", search);
 
 search("San Francisco");
 
+function showCity(response) {
+  let currentCity = response.data.name.trim().toUpperCase();
+  let city = document.querySelector("h1");
+  city.innerHTML = `${currentCity}`;
+
+  showTemperature(response);
+}
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -147,7 +154,7 @@ function showPosition(position) {
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndpoint}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
 
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(showCity);
 }
 
 function getLocation(event) {
