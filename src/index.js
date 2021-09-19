@@ -42,7 +42,7 @@ currentDate.innerHTML = formatDate(now);
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["SUN", "MON", "TUES", "WED", "THU", "FRI,", "SAT"];
+  let days = ["SUN", "MON", "TUES", "WED", "THU", "FRI", "SAT"];
 
   return days[day];
 }
@@ -126,7 +126,9 @@ function search(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-text");
-  search(searchInput.value);
+  let city = searchInput.value.trim().toUpperCase();
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = `${city}`;
 }
 
 let form = document.querySelector("#search-city");
