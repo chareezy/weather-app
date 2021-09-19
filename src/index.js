@@ -85,6 +85,7 @@ function displayForecast(response) {
 }
 
 function search(event) {
+  event.preventDefault();
   let searchInput = document.querySelector("#search-text");
   let apiKey = "eb9800f95ce9aba6c28ebe6edbd56a9d";
   let city = searchInput.value.trim().toUpperCase();
