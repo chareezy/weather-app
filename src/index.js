@@ -125,8 +125,8 @@ function search(city) {
 }
 function handleSubmit(event) {
   event.preventDefault();
-  let searchInput = document.querySelector("#search-text");
-  search(searchInput.value.trim().toUpperCase());
+  let searchInput = document.querySelector("#search-city");
+  search(searchInput.value);
 }
 
 let form = document.querySelector("#search-city");
