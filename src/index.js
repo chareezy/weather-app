@@ -84,27 +84,13 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function search(city) {
-  let apiKey = "eb9800f95ce9aba6c28ebe6edbd56a9d";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(showTemperature);
-}
-function search(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-text");
-  let city = searchInput.value.trim().toUpperCase();
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${city}`;
-}
-search("San Francisco");
-
 function getForecast(coordinates) {
   let apiKey = "eb9800f95ce9aba6c28ebe6edbd56a9d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayForecast);
 }
+
 function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   let temperatureElement = document.querySelector(".today-degree");
@@ -131,11 +117,27 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
+function search(city) {
+  let apiKey = "eb9800f95ce9aba6c28ebe6edbd56a9d";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-text");
+  let city = searchInput.value.trim().toUpperCase();
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = `${city}`;
+}
+
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", search);
 
 let button = document.querySelector("#click-button");
 button.addEventListener("click", search);
+
+search("San Francisco");
 
 function showPosition(position) {
   let lat = position.coords.latitude;
