@@ -117,24 +117,23 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
-function search(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-text");
+function search(city) {
   let apiKey = "eb9800f95ce9aba6c28ebe6edbd56a9d";
-  let city = searchInput.value.trim().toUpperCase();
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${city}`;
-
   axios.get(apiUrl).then(showTemperature);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-text");
+  search(searchInput.value);
 }
 
 let form = document.querySelector("#search-city");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
 
 let button = document.querySelector("#click-button");
-button.addEventListener("click", search);
+button.addEventListener("click", handleSubmit);
 
 search("San Francisco");
 
