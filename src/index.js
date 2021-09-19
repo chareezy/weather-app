@@ -84,7 +84,7 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function search(event) {
+function search(city) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-text");
   let apiKey = "eb9800f95ce9aba6c28ebe6edbd56a9d";
@@ -186,4 +186,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-showCity("San Francisco");
+search("San Francisco");
