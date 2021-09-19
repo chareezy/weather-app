@@ -125,15 +125,15 @@ function search(city) {
 }
 function handleSubmit(event) {
   event.preventDefault();
-  let searchInput = document.querySelector("#search-city");
+  let searchInput = document.querySelector("#search-text");
   search(searchInput.value);
 }
 
 let form = document.querySelector("#search-city");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
 
 let button = document.querySelector("#click-button");
-button.addEventListener("click", search);
+button.addEventListener("click", handleSubmit);
 
 search("San Francisco");
 
