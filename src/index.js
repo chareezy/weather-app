@@ -127,7 +127,7 @@ function handleSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-text");
   let city = searchInput.value.trim().toUpperCase();
-  let h1 = document.querySelector("h1");
+  let h1 = document.querySelector("#search-text");
   h1.innerHTML = `${city}`;
 }
 
