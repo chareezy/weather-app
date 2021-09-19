@@ -83,18 +83,18 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
 function search(city) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-text");
   let apiKey = "eb9800f95ce9aba6c28ebe6edbd56a9d";
-  let city = searchInput.value.trim().toUpperCase();
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
+}
+function search(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-text");
+  let city = searchInput.value.trim().toUpperCase();
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${city}`;
-
-  axios.get(apiUrl).then(showTemperature);
 }
 
 function getForecast(coordinates) {
@@ -131,6 +131,8 @@ function showTemperature(response) {
 
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", search);
+
+search("San Francisco");
 
 let button = document.querySelector("#click-button");
 button.addEventListener("click", search);
