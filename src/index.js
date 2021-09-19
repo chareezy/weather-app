@@ -83,6 +83,7 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
 function search(city) {
   let apiKey = "eb9800f95ce9aba6c28ebe6edbd56a9d";
   let units = "metric";
@@ -96,6 +97,7 @@ function search(event) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${city}`;
 }
+search("San Francisco");
 
 function getForecast(coordinates) {
   let apiKey = "eb9800f95ce9aba6c28ebe6edbd56a9d";
@@ -135,14 +137,6 @@ form.addEventListener("submit", search);
 let button = document.querySelector("#click-button");
 button.addEventListener("click", search);
 
-function showCity(response) {
-  let currentCity = response.data.name.trim().toUpperCase();
-  let city = document.querySelector("h1");
-  city.innerHTML = `${currentCity}`;
-
-  showTemperature(response);
-}
-
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -151,7 +145,7 @@ function showPosition(position) {
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndpoint}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
 
-  axios.get(apiUrl).then(showCity);
+  axios.get(apiUrl).then(showTemperature);
 }
 
 function getLocation(event) {
@@ -185,5 +179,3 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
-search("San Francisco");
