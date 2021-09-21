@@ -129,14 +129,13 @@ function handleSubmit(event) {
   let city = searchInput.value.trim().toUpperCase();
   city.innerHTML = `${city}`;
 }
+search("San Francisco");
 
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", handleSubmit);
 
 let button = document.querySelector("#click-button");
 button.addEventListener("click", handleSubmit);
-
-search("San Francisco");
 
 function showCity(response) {
   let currentCity = response.data.name.trim().toUpperCase();
