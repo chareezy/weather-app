@@ -2,6 +2,7 @@ body {
   display: block;
   margin-top: 5px;
   font-family: "Lato", sans-serif;
+  text-transform: uppercase;
 }
 h1 {
   text-align: center;
