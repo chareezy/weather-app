@@ -144,7 +144,13 @@ function showPosition(position) {
 
   axios.get(apiUrl).then(showCity);
 }
+function showCity(response) {
+  let currentCity = response.data.name.trim().toUpperCase();
+  let city = document.querySelector("h1");
+  city.innerHTML = `${currentCity}`;
 
+  showTemperature(response);
+}
 function getLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
