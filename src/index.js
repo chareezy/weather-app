@@ -132,6 +132,9 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", handleSubmit);
 
+let button = document.querySelector("#click-button");
+button.addEventListener("click", handleSubmit);
+
 search("San Francisco");
 
 function showPosition(position) {
