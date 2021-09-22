@@ -134,13 +134,6 @@ form.addEventListener("submit", handleSubmit);
 
 search("San Francisco");
 
-function showCity(response) {
-  let currentCity = response.data.name.trim().toUpperCase();
-  let city = document.querySelector("h1");
-  city.innerHTML = `${currentCity}`;
-
-  showTemperature(response);
-}
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -159,12 +152,3 @@ function getLocation(event) {
 
 let currentLocation = document.querySelector("#location-button");
 currentLocation.addEventListener("click", getLocation);
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(".today-degree");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
