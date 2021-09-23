@@ -99,6 +99,8 @@ function showTemperature(response) {
   let humidity = document.querySelector("#humidity");
   let humid = response.data.main.humidity;
   let wind = document.querySelector("#wind");
+  let cityName = document.querySelector("h1");
+  cityName.innerHTML = response.data.name;
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   description.innerHTML = response.data.weather[0].description
