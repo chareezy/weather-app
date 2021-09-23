@@ -54,6 +54,9 @@ h1 {
 .search-icon {
   background: transparent;
 }
+.search-icon:hover {
+  cursor: pointer;
+}
 .temp-description,
 .currentDate {
   text-align: center;
