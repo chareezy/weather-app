@@ -1,6 +1,6 @@
 body {
   display: block;
-  margin-top: 5px;
+  margin-top: 20px;
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
 }
@@ -12,7 +12,7 @@ h1 {
 .box {
   border: 4px double #000;
   max-width: 650px;
-  margin: 50px auto;
+  margin: 5px auto;
   padding: 10 50 20;
   height: 660px;
   width: 900px;
