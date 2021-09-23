@@ -6,16 +6,16 @@ body {
 }
 h1 {
   text-align: center;
-  font-weight: 700;
-  padding: 40px;
+  font-weight: 600;
+  padding: 0px;
 }
 .box {
   border: 4px double #000;
   max-width: 650px;
-  margin: 50px auto;
+  margin: 40px auto;
   padding: 10 50 20;
-  height: 870px;
-  width: 800px;
+  height: 750px;
+  width: 900px;
   border-radius: 10%;
 }
 .weather-icon {
@@ -41,18 +41,10 @@ h1 {
   left: 50px;
   font-size: 20px;
 }
-
-.temp-units .active {
-  color: #000;
-  cursor: default;
-}
-.temp-units .active:hover {
-  text-decoration: none;
-}
 .search {
   display: inline-block;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: 40px;
 }
 .search-input {
