@@ -6,22 +6,20 @@ body {
 }
 h1 {
   text-align: center;
-  font-weight: 600;
-  padding: 0px;
+  font-weight: 300;
 }
 .box {
   border: 4px double #000;
   max-width: 650px;
-  margin: 40px auto;
+  margin: 50px auto;
   padding: 10 50 20;
-  height: 750px;
+  height: 680px;
   width: 900px;
   border-radius: 10%;
 }
 .weather-icon {
   display: block;
   margin: 0 auto;
-  width: 30%;
   padding: 10px;
 }
 .today-degree {
@@ -29,7 +27,7 @@ h1 {
   text-align: center;
   position: relative;
   font-size: 60px;
-  font-weight: 700;
+  font-weight: 300;
 }
 .temp-units {
   color: #000;
@@ -38,7 +36,7 @@ h1 {
   text-decoration: none;
   position: relative;
   bottom: 75px;
-  left: 50px;
+  left: 45px;
   font-size: 20px;
 }
 .search {
@@ -68,6 +66,8 @@ h1 {
   text-align: center;
   margin: 0 auto;
   display: block;
+  font-weight: 400;
+  font-size: 15px;
 }
 .weather-forecast-temp-min {
   opacity: 0.5;
